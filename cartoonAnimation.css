@@ -1,0 +1,318 @@
+h1 {
+    text-align: center;
+    color: #666;
+}
+
+.container {
+    width: 800px;
+    height: 450px;
+    margin: 20px auto;
+    position: relative;
+    background: rgb(187, 235, 255);
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.mountain {
+    position: relative;
+}
+
+.mountain .part_one {
+    width: 300px;
+    height: 300px;
+    background: rgb(106, 207, 255);
+    position: absolute;
+    transform: rotate(30deg) skew(-9deg) translate3d(120px, 200px, 0);
+}
+
+.mountain .part_two {
+    width: 200px;
+    height: 200px;
+    background: rgb(105, 198, 242);
+    position: absolute;
+    left: 300px;
+    transform: rotate(30deg) skew(-20deg) translate3d(260px, 90px, 0);
+}
+
+.mountain .part_three {
+    width: 300px;
+    height: 300px;
+    background: rgb(106, 207, 255);
+    position: absolute;
+    left: 200px;
+    transform: rotate(45deg) skew(10deg) translate3d(120px, 150px, 0);
+}
+
+.mountain .part_four {
+    width: 200px;
+    height: 200px;
+    background: rgb(106, 207, 255);
+    position: absolute;
+    left: 430px;
+    transform: rotate(34deg) skew(-30deg) translate3d(300px, 95px, 0);
+}
+
+.load {
+    position: relative;
+    top: 290px;
+    background: rgb(27, 121, 160);
+    height: 160px;
+}
+
+.sun {
+    position: relative;
+}
+
+.sun .center_sun {
+    width: 40px;
+    height: 40px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -120px;
+    right: 160px;
+}
+
+.sun .sunshine {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, #f67e28 0%, #f67e28 50%, #f4bf9a 60%, #f4bf9a 100%); /* W3C */
+    position: absolute;
+    top: -130px;
+    right: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 4px rgba(246, 126, 40, 0.3);
+    animation: sun_shining 3s ease infinite alternate;
+}
+
+@keyframes sun_shining {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cloud {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: -60px;
+    top: 20px;
+    animation: cloud_move 8s linear infinite;
+}
+
+.cloud:before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px 0 0 20px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: -13px;
+}
+
+.cloud:after {
+    content: '';
+    display: inline-block;
+    width: 45px;
+    height: 30px;
+    border-radius: 0 30px 30px 0;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    right: -19px;
+}
+
+@keyframes cloud_move {
+    0% {
+        left: -60px;
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: 550px;
+        opacity: 0;
+    }
+}
+
+.trees {
+    position: relative;
+}
+
+.trees .leftTree, .trees .rightTree {
+    width: 40px;
+    height: 40px;
+    background: rgb(144, 193, 56);
+    border-radius: 50%;
+    position: absolute;
+    left: 105px;
+    top: 70px;
+    z-index: 4;
+}
+
+.trees .rightTree {
+    left: 396px;
+}
+
+.leftTree span, .rightTree span {
+    display: inline-block;
+    width: 14px;
+    height: 4px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 24px;
+    top: 10px;
+    transform: rotate(-30deg);
+}
+
+.leftTree:after, .rightTree:after {
+    content: '';
+    display: inline-block;
+    height: 33px;
+    border: 2px solid rgb(235, 97, 0);
+    position: absolute;
+    top: 40px;
+    left: 18px;
+}
+
+.stone {
+    width: 30px;
+    height: 16px;
+    background: #333;
+    border-radius: 16px 16px 5px 5px;
+    position: absolute;
+    top: 410px;
+    left: 550px;
+    box-shadow: 1px 1px 1px #333;
+}
+
+.car {
+    position: absolute;
+    left: 300px;
+    top: 340px;
+    z-index: 7;
+    animation: car_drive 5s ease-in infinite;
+}
+
+@keyframes car_drive {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 880px;
+    }
+}
+
+.car .car_top1, .car .car_top2 {
+    width: 45px;
+    height: 35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgb(246, 126, 40);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: skew(24deg);
+}
+
+.car .car_top1 {
+    left: -29px;
+    top: 0;
+    transform: skew(-24deg);
+}
+
+.car .car_win1, .car .car_win2 {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-top-left-radius: 10px;
+    position: absolute;
+    left: 13px;
+    top: 6px;
+    transform: rotate(80deg) skew(-10deg);
+}
+
+.car .car_win1 {
+    left: -22px;
+    transform: rotate(0deg) skew(-10deg);
+}
+
+.car .car_win1:after, .car .car_win2:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 24px;
+    background: #fff;
+    position: absolute;
+    left: 16px;
+    top: 0;
+    transform: skew(10deg);
+}
+
+.car .car_win2:after {
+    top: 9px;
+    left: 7px;
+    transform: rotate(-90deg) skew(-10deg);
+}
+
+.car .car_bottom1, .car .car_bottom2 {
+    width: 74px;
+    height: 33px;
+    background: rgb(246, 126, 40);
+    border-top-left-radius: 24px 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom: 8px solid rgb(186, 188, 187);
+    position: absolute;
+    top: 34px;
+    left: -66px;
+    transform: skew(-4deg);
+}
+
+.car .car_bottom2 {
+    height: 36px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 13px 17px;
+    border-bottom-right-radius: 3px;
+    left: 0;
+    top: 31px;
+    transform: skew(8deg);
+}
+
+.car .frontWheel, .car .endWheel {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #333;
+    position: absolute;
+    top: 55px;
+    left: -40px;
+}
+
+.car .endWheel {
+    left: 20px;
+}
+
+.car .frontWheel:after, .car .endWheel:after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -7px;
+}
